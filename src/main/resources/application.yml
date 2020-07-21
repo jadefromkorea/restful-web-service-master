@@ -6,8 +6,20 @@ logging:
     org.springframework: DEBUG
 
 spring:
+  datasource:
+    url: jdbc:mariadb://jadefromkorea.synology.me:3306/jpa_db
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: ljh032
+    password: 123456
   jpa:
+    open-in-view: false
+    generate-ddl: true
     show-sql: true
+    hibernate:
+      ddl-auto: update
+
+#  jpa:
+#    show-sql: true
   messages:
     basename: messages
   security:

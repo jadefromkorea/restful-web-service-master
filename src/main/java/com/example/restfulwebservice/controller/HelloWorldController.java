@@ -1,7 +1,6 @@
-package com.example.restfulwebservice.helloworld;
+package com.example.restfulwebservice.controller;
 
-import com.example.restfulwebservice.user.User;
-import com.example.restfulwebservice.user.UserDaoService;
+import com.example.restfulwebservice.helloworld.HelloWorldBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +19,7 @@ public class HelloWorldController {
     // GET
     // /hello-world (endpoint)
     // @RequestMapping(method=RequestMethod.GET, path="/hello-world")
-    @GetMapping(path = "/hello-world")
+    @GetMapping(path = "/hello-world ")
     public String helloWorld() {
         return "Hello World";
     }
