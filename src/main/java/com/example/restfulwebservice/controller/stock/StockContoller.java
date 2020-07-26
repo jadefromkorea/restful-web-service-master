@@ -18,15 +18,15 @@ public class StockContoller {
     @Autowired
     private StockRepository stockRepository;
 
-    StockItem stockItem = new StockItem();
-    String stockId;
-    String stockNm;
-    String stockItemUrl;
-
     @GetMapping("/stockItem")
     public void setStockItem() {
         String url = "https://finance.naver.com/sise/entryJongmok.nhn?&page=";
         Document doc = null;
+
+        StockItem stockItem = new StockItem();
+        String stockId;
+        String stockNm;
+        String stockItemUrl;
 
         List<StockItem> stockItemList = new ArrayList<StockItem>();
 
