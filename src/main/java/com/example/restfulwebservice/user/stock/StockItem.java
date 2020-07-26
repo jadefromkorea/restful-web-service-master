@@ -1,13 +1,12 @@
 package com.example.restfulwebservice.user.stock;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Data
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -16,5 +15,5 @@ public class StockItem {
     private String stockId;
     private String stockNm;
     private String stockItemUrl;
-
+    private int no;
 }

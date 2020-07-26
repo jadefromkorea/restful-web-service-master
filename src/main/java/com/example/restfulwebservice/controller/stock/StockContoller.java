@@ -5,6 +5,7 @@ import com.example.restfulwebservice.user.stock.StockItem;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 public class StockContoller {
+    @Autowired
     private StockRepository stockRepository;
 
     StockItem stockItem = new StockItem();
@@ -52,6 +54,7 @@ public class StockContoller {
                 stockItem.setStockId(stockId);
                 stockItem.setStockNm(stockNm);
                 stockItem.setStockItemUrl(stockItemUrl);
+                stockItem.setNo((i-1)*10+j+1);
 
                 StockItem save = stockRepository.save(stockItem);
 //                System.out.print("save >>>>> " + save);
