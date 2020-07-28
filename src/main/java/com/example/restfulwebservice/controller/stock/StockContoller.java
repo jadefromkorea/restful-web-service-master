@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,9 +56,11 @@ public class StockContoller {
                 stockItem.setStockId(stockId);
                 stockItem.setStockNm(stockNm);
                 stockItem.setStockItemUrl(stockItemUrl);
-                stockItem.setNo((i-1)*10+j+1);
+                stockItem.setRank((i-1)*10+j+1);
+                stockItem.setCreateDt(Timestamp.valueOf(LocalDateTime.now()));
 
-                StockItem save = stockRepository.save(stockItem);
+                stockRepository.save(stockItem);
+//                StockItem save = stockRepository.save(stockItem);
 //                System.out.print("save >>>>> " + save);
             }
         }
