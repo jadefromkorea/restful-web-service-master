@@ -1,19 +1,22 @@
 package com.example.restfulwebservice.controller.stock;
 
-import com.example.restfulwebservice.repository.stock.StockRepository;
-import com.example.restfulwebservice.util.StockInfo;
+import com.example.restfulwebservice.util.Stock.StockInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class StockContoller {
+//    @Autowired
+//    private StockRepository stockRepository;
+
     @Autowired
-    private StockRepository stockRepository;
+    StockInfo stockInfo;
 
     @GetMapping("/stockItem")
     public void setStockItem() {
-        StockInfo stockInfo = new StockInfo(stockRepository);
+//        StockInfo stockInfo = new StockInfo();
+//        StockInfo stockInfo = new StockInfo(stockRepository);
 
         stockInfo.setStockItemsInfo();
 

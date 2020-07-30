@@ -1,23 +1,27 @@
-package com.example.restfulwebservice.util;
+package com.example.restfulwebservice.util.Stock;
 
 import com.example.restfulwebservice.repository.stock.StockRepository;
 import com.example.restfulwebservice.user.stock.StockItem;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
+@Component
 public class StockInfo {
-//    @Autowired
-    private final StockRepository stockRepository;
+    @Autowired
+    private StockRepository stockRepository;
+//    private final StockRepository stockRepository;
 
-    public StockInfo(StockRepository stockRepository) {
-        this.stockRepository = stockRepository;
-    }
+//    public StockInfo(StockRepository stockRepository) {
+//        this.stockRepository = stockRepository;
+//    }
 
     @Transactional
     public void setStockItemsInfo() {
